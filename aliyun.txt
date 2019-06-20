@@ -1,0 +1,131 @@
+student@905-11:~$ su
+Password: 
+root@905-11:/home/student# docker info
+Containers: 0
+ Running: 0
+ Paused: 0
+ Stopped: 0
+Images: 0
+Server Version: 18.03.1-ce
+Storage Driver: overlay2
+ Backing Filesystem: extfs
+ Supports d_type: true
+ Native Overlay Diff: true
+Logging Driver: json-file
+Cgroup Driver: cgroupfs
+Plugins:
+ Volume: local
+ Network: bridge host macvlan null overlay
+ Log: awslogs fluentd gcplogs gelf journald json-file logentries splunk syslog
+Swarm: inactive
+Runtimes: runc
+Default Runtime: runc
+Init Binary: docker-init
+containerd version: 773c489c9c1b21a6d78b5c538cd395416ec50f88
+runc version: 4fc53a81fb7c994640722ac585fa9ca548971871
+init version: 949e6fa
+Security Options:
+ seccomp
+  Profile: default
+Kernel Version: 4.9.65-BOOTLoader-AMD64
+Operating System: Ubuntu 16.04 LTS
+OSType: linux
+Architecture: x86_64
+CPUs: 4
+Total Memory: 3.822GiB
+Name: 905-11
+ID: CWDL:UIML:FB2X:EAKT:4CQS:BFCG:ABK2:HZVH:P35Q:LNF3:SMHX:5ENF
+Docker Root Dir: /var/lib/docker
+Debug Mode (client): false
+Debug Mode (server): false
+Registry: https://index.docker.io/v1/
+Labels:
+Experimental: false
+Insecure Registries:
+ 127.0.0.0/8
+Live Restore Enabled: false
+
+WARNING: No swap limit support
+root@905-11:/home/student# cd /etc/systemd/system
+root@905-11:/etc/systemd/system# ls
+bluetooth.target.wants                      hybrid-sleep.target.wants
+dbus-org.bluez.service                      multi-user.target.wants
+dbus-org.freedesktop.Avahi.service          network-online.target.wants
+dbus-org.freedesktop.ModemManager1.service  paths.target.wants
+dbus-org.freedesktop.nm-dispatcher.service  printer.target.wants
+dbus-org.freedesktop.thermald.service       shutdown.target.wants
+default.target.wants                        sockets.target.wants
+display-manager.service                     sshd.service
+display-manager.service.wants               suspend.target.wants
+docker.service                              sysinit.target.wants
+getty.target.wants                          syslog.service
+graphical.target.wants                      timers.target.wants
+hibernate.target.wants
+root@905-11:/etc/systemd/system# vim docker.service 
+root@905-11:/etc/systemd/system# systemctl daemon-reload
+root@905-11:/etc/systemd/system# systemctl restart docker
+root@905-11:/etc/systemd/system# docker pull python:3
+^C
+root@905-11:/etc/systemd/system# ^C
+root@905-11:/etc/systemd/system# docker info
+Containers: 0
+ Running: 0
+ Paused: 0
+ Stopped: 0
+Images: 0
+Server Version: 18.03.1-ce
+Storage Driver: overlay2
+ Backing Filesystem: extfs
+ Supports d_type: true
+ Native Overlay Diff: true
+Logging Driver: json-file
+Cgroup Driver: cgroupfs
+Plugins:
+ Volume: local
+ Network: bridge host macvlan null overlay
+ Log: awslogs fluentd gcplogs gelf journald json-file logentries splunk syslog
+Swarm: inactive
+Runtimes: runc
+Default Runtime: runc
+Init Binary: docker-init
+containerd version: 773c489c9c1b21a6d78b5c538cd395416ec50f88
+runc version: 4fc53a81fb7c994640722ac585fa9ca548971871
+init version: 949e6fa
+Security Options:
+ seccomp
+  Profile: default
+Kernel Version: 4.9.65-BOOTLoader-AMD64
+Operating System: Ubuntu 16.04 LTS
+OSType: linux
+Architecture: x86_64
+CPUs: 4
+Total Memory: 3.822GiB
+Name: 905-11
+ID: CWDL:UIML:FB2X:EAKT:4CQS:BFCG:ABK2:HZVH:P35Q:LNF3:SMHX:5ENF
+Docker Root Dir: /var/lib/docker
+Debug Mode (client): false
+Debug Mode (server): false
+Registry: https://index.docker.io/v1/
+Labels:
+Experimental: false
+Insecure Registries:
+ 127.0.0.0/8
+Registry Mirrors:
+ https://a47fe8d6.mirror.aliyuncs.com/
+Live Restore Enabled: false
+
+WARNING: No swap limit support
+root@905-11:/etc/systemd/system# docker pull python:3
+3: Pulling from library/python
+6f2f362378c5: Pull complete 
+494c27a8a6b8: Pull complete 
+7596bb83081b: Pull complete 
+372744b62d49: Pull complete 
+615db220d76c: Pull complete 
+39aa0c89bda1: Pull complete 
+ac275157d894: Pull complete 
+98d16dec829a: Pull complete 
+c8514b1c6524: Pull complete 
+Digest: sha256:9e0b4f32487ca1863b45383420b8db77990debae748e2e875d2f86fa9510d4a5
+Status: Downloaded newer image for python:3
+root@905-11:/etc/systemd/system# 
