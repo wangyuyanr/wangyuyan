@@ -1,0 +1,5 @@
+#!/bin/bash                                
+apt-get update
+apt-get install -y git
+git config --global user.name "wangyuyanr"
+git config --global user.email "1007935098@qq.com"
